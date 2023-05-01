@@ -1,18 +1,23 @@
+import { Text, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 import Typed from 'react-typed';
 
 const SwiperText = () => {
   const options = {
-    strings: ['Designer', 'Developer', 'Freelancer', 'Photographer'],
-    typeSpeed: 50,
+    strings: ['Designer', 'Developer', 'Freelancer', 'Hooper', 'Lover'],
+    typeSpeed: 70,
     backSpeed: 50,
     loop: true,
   };
 
   return (
-    <p>
-      I'm <Typed {...options} />
-    </p>
+    <Text fontSize="2xl" fontWeight="bold" color="white">
+      I'm{' '}
+      <Typed
+        style={{ color: useColorModeValue('orange', 'blue') }}
+        {...options}
+      />
+    </Text>
   );
 };
 

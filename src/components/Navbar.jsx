@@ -22,7 +22,7 @@ import {
   FiPhone,
 } from 'react-icons/fi';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const LinkItems = [
   { name: 'Home', icon: FiHome },
@@ -57,7 +57,9 @@ export default function Navbar({ children }) {
       </Drawer>
       {/* mobilenav */}
       <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }}>{children}</Box>
+      <Box ml={{ base: 0, md: 60 }}>
+        <Outlet />
+      </Box>
     </Box>
   );
 }
