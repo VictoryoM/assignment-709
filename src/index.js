@@ -8,31 +8,32 @@ import Contact from './contact';
 import Skill from './skill';
 import Reference from './reference';
 import Project from './project';
+import Navbar from './components/Navbar';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Navbar children={<App />} />,
   },
   {
     path: 'about',
-    element: <About />,
+    element: <Navbar children={<About />} />,
   },
   {
     path: 'contact',
-    element: <Contact />,
+    element: <Navbar children={<Contact />} />,
   },
   {
     path: 'skill',
-    element: <Skill />,
+    element: <Navbar children={<Skill />} />,
   },
   {
     path: 'reference',
-    element: <Reference />,
+    element: <Navbar children={<Reference />} />,
   },
   {
     path: 'project',
-    element: <Project />,
+    element: <Navbar children={<Project />} />,
     // loader: teamLoader,
   },
 ]);

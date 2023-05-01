@@ -35,6 +35,7 @@ const LinkItems = [
 
 export default function Navbar({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  // console.log(children);
   return (
     <Box>
       <SidebarContent
@@ -56,9 +57,7 @@ export default function Navbar({ children }) {
       </Drawer>
       {/* mobilenav */}
       <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
-      </Box>
+      <Box ml={{ base: 0, md: 60 }}>{children}</Box>
     </Box>
   );
 }

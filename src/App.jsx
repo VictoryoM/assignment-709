@@ -1,12 +1,18 @@
 import React from 'react';
 import { Box, Text, Link, VStack, Code, Grid } from '@chakra-ui/react';
-import Navbar from './components/Navbar';
+import SwiperText from './components/SwiperText';
 
 function App() {
   return (
-    <Box textAlign="center" fontSize="xl">
-      <Navbar />
-      <Grid minH="100vh" p={3} paddingLeft={{ base: 'none', md: '27vh' }}>
+    <Box
+      textAlign="center"
+      fontSize="xl"
+      bgColor={'rgba(0, 0, 0, 0.8)'}
+      bgImage={'https://hello.victoryo.site/assets/img/hero-bg.jpg'}
+      bgSize={'cover'}
+    >
+      {/* <Navbar /> */}
+      <Grid minH="100vh">
         <VStack spacing={8}>
           <Text>
             Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
@@ -20,6 +26,7 @@ function App() {
           >
             Learn Chakra
           </Link>
+          <SwiperText />
         </VStack>
       </Grid>
     </Box>
