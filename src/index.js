@@ -1,4 +1,4 @@
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import { ChakraProvider, ColorModeScript, theme } from '@chakra-ui/react';
 import React, { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import App from './App';
@@ -9,34 +9,6 @@ import Skill from './skill';
 import Reference from './reference';
 import Project from './project';
 import Navbar from './components/Navbar';
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Navbar children={<App />} />,
-//   },
-//   {
-//     path: 'about',
-//     element: <Navbar children={<About />} />,
-//   },
-//   {
-//     path: 'contact',
-//     element: <Navbar children={<Contact />} />,
-//   },
-//   {
-//     path: 'skill',
-//     element: <Navbar children={<Skill />} />,
-//   },
-//   {
-//     path: 'reference',
-//     element: <Navbar children={<Reference />} />,
-//   },
-//   {
-//     path: 'project',
-//     element: <Navbar children={<Project />} />,
-//     // loader: teamLoader,
-//   },
-// ]);
 
 const router = createBrowserRouter([
   {
@@ -77,7 +49,7 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <RouterProvider router={router} />
       <ColorModeScript />
     </ChakraProvider>

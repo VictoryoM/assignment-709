@@ -11,7 +11,7 @@ const SwiperText = () => {
   };
 
   return (
-    <Text fontSize="2xl" fontWeight="bold" color="white">
+    <Text fontSize="2xl" color={'white'}>
       I'm{' '}
       <Typed
         style={{ color: useColorModeValue('orange', 'blue') }}

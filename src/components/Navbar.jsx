@@ -99,7 +99,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 const NavItem = ({ icon, children, ...rest }) => {
   return (
     <Link
-      to={children === 'Home' ? '/' : `/${children}`}
+      to={children === 'Home' ? '/' : `/${children.toLowerCase()}`}
       style={{ textDecoration: 'none' }}
       _focus={{ boxShadow: 'none' }}
     >

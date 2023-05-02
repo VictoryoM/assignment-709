@@ -1,31 +1,29 @@
 import {
-  Box,
   Button,
   Flex,
   FormControl,
-  FormHelperText,
   FormLabel,
   Heading,
-  IconButton,
   Input,
-  InputGroup,
-  InputLeftElement,
-  Link,
   Stack,
-  Textarea,
-  Tooltip,
-  useClipboard,
   useColorModeValue,
-  VStack,
+  HStack,
+  Avatar,
+  AvatarBadge,
+  IconButton,
+  Center,
+  Textarea,
 } from '@chakra-ui/react';
+import { SmallCloseIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
-import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from 'react-icons/bs';
-import { MdEmail, MdOutlineEmail } from 'react-icons/md';
+import Socials from './components/SocialButton';
+import theImage from './components/hero-bg.jpg';
 
 export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [companyName, setCompanyName] = useState('');
 
   const handleSubmit = () => {
     if (!name || !email || !message) {
@@ -39,6 +37,7 @@ export default function Contact() {
       embeds: [
         {
           fields: [
+            { name: 'Company Name', value: companyName },
             { name: 'Name', value: name },
             { name: 'Email', value: email },
             { name: 'Message', value: message },
@@ -56,23 +55,93 @@ export default function Contact() {
   };
 
   return (
-    <Box>
-      <FormControl>
-        <FormLabel>Name</FormLabel>
-        <Input onChange={e => setName(e.target.value)} type="text" />
-      </FormControl>
-      <FormControl>
-        <FormLabel>Email address</FormLabel>
-        <Input onChange={e => setEmail(e.target.value)} type="email" />
-      </FormControl>
-      <FormControl>
-        <FormLabel>Messages</FormLabel>
-        <Input onChange={e => setMessage(e.target.value)} type="text" />
-        <FormHelperText>We'll never share your credential.</FormHelperText>
-      </FormControl>
-      <Button colorScheme="teal" variant="solid" onClick={handleSubmit}>
-        Button
-      </Button>
-    </Box>
+    <Flex
+      minH={'100vh'}
+      align={'center'}
+      justify={'center'}
+      bg={useColorModeValue('gray.50', 'gray.800')}
+      bgImage={theImage}
+      bgSize={'cover'}
+    >
+      <Stack
+        spacing={4}
+        w={'full'}
+        maxW={'md'}
+        bg={useColorModeValue(
+          'rgba(251, 251, 242, 0.8)',
+          'rgba(86, 82, 84, 0.8)'
+        )}
+        rounded={'xl'}
+        boxShadow={'lg'}
+        p={6}
+        my={12}
+        backdropFilter="saturate(180%) blur(5px)"
+      >
+        <Center>
+          <Heading lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl' }}>
+            Contact Me
+          </Heading>
+        </Center>
+        <Center>
+          <Flex direction={'column'} alignItems={'center'}>
+            <Avatar
+              size="2xl"
+              src="https://hellovictoryo.vercel.app/assets/img/profile-img.jpg"
+            ></Avatar>
+            <Socials />
+          </Flex>
+        </Center>
+        <FormControl id="userName" isRequired>
+          <FormLabel>Company Name</FormLabel>
+          <Input
+            placeholder="Your Company"
+            _placeholder={{ color: 'gray.500' }}
+            type="text"
+            onChange={e => setCompanyName(e.target.value)}
+          />
+        </FormControl>
+        <FormControl id="userName" isRequired>
+          <FormLabel>Name</FormLabel>
+          <Input
+            placeholder="Name"
+            _placeholder={{ color: 'gray.500' }}
+            type="text"
+            onChange={e => setName(e.target.value)}
+          />
+        </FormControl>
+        <FormControl id="email" isRequired>
+          <FormLabel>Email address</FormLabel>
+          <Input
+            onChange={e => setEmail(e.target.value)}
+            placeholder="email@email.com"
+            _placeholder={{ color: 'gray.500' }}
+            type="email"
+          />
+        </FormControl>
+        <FormControl isRequired>
+          <FormLabel>Messages</FormLabel>
+          <Textarea
+            onChange={e => setMessage(e.target.value)}
+            placeholder="Message"
+            _placeholder={{ color: 'gray.500' }}
+            type="text"
+            minH={100}
+          />
+        </FormControl>
+        <Stack spacing={6} direction={['column', 'row']}>
+          <Button
+            bg={'blue.400'}
+            color={'white'}
+            w="full"
+            _hover={{
+              bg: 'blue.500',
+            }}
+            onClick={handleSubmit}
+          >
+            Submit
+          </Button>
+        </Stack>
+      </Stack>
+    </Flex>
   );
 }
