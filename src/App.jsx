@@ -20,7 +20,7 @@ function App() {
     <Box
       textAlign="center"
       fontSize="xl"
-      opacity={useColorModeValue('0.8', '0.5')}
+      opacity={useColorModeValue('0.8', '0.6')}
       bgImage={theImage}
       bgSize={'cover'}
     >
