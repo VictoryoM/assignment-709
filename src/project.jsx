@@ -1,13 +1,17 @@
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Divider, Flex, Heading } from '@chakra-ui/react';
 import React from 'react';
 
 export default function Project() {
   return (
-    <Box textAlign="center" fontSize="xl">
-      {/* <Navbar />
-      <Grid minH="100vh" p={3} paddingLeft={{ base: 'none', md: '27vh' }}> */}
-      <Heading>Hello</Heading>
-      {/* </Grid> */}
+    <Box
+      fontSize={{ base: 'lg', md: 'xl' }}
+      marginX={{ base: '3', md: '8' }}
+      marginBottom={6}
+    >
+      <Flex direction={'column'} gap={8} textAlign="center">
+        <Heading marginTop={5}>Projects</Heading>
+        <Divider border={'1px'} />
+      </Flex>
     </Box>
   );
 }

@@ -12,8 +12,8 @@ import React from 'react';
 export function StatsLeft() {
   const status = [
     { skill: 'HTML', percentage: '100' },
-    { skill: 'Javascript', percentage: '55' },
     { skill: 'Typescript', percentage: '69' },
+    { skill: 'Javascript', percentage: '55' },
   ];
   return (
     <Box>
@@ -50,7 +50,7 @@ export function StatsLeft() {
 export function StatsRight() {
   const status = [
     { skill: 'Networking', percentage: '100' },
-    { skill: 'Github', percentage: '85' },
+    { skill: 'Github', percentage: '92' },
     { skill: 'Figma', percentage: '90' },
   ];
   return (

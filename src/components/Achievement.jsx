@@ -6,121 +6,73 @@ import {
   Stack,
   Avatar,
   useColorModeValue,
+  Flex,
+  Skeleton,
 } from '@chakra-ui/react';
+import { useState } from 'react';
 
-export function AchievementRight() {
+export function Achievement(props) {
+  const { title, sub, description, image, institution, date, status } = props;
+  const [loading, setLoading] = useState(true);
   return (
     <Center py={3}>
-      <Box
-        maxW={'295px'}
-        w={'full'}
+      <Flex
+        direction={'column'}
+        maxW={'395px'}
+        // w={'full'}
         bg={useColorModeValue('white', 'gray.900')}
         boxShadow={'2xl'}
         rounded={'md'}
-        p={8}
-        overflow={'hidden'}
+        p={2}
+        // overflow={'hidden'}
       >
-        <Box
-          h={'165px'}
+        {/* <Box
+          h={{ base: '200px', lg: '215px' }}
           bg={'gray.100'}
           mt={-6}
           mx={-6}
           mb={6}
           pos={'relative'}
-        >
+        > */}
+        <Skeleton isLoaded={!loading}>
           <img
-            src={
-              'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-            }
-            layout={'fill'}
+            src={image}
+            onLoad={() => setLoading(false)}
+            // layout={'fill'}
           />
-        </Box>
-        <Stack>
+        </Skeleton>
+        {/* </Box> */}
+        <Stack p={3}>
           <Text
             color={'green.500'}
             textTransform={'uppercase'}
             fontWeight={800}
             fontSize={'xs'}
             letterSpacing={1.1}
+            // p={3}
           >
-            Bachelor
+            {title}
           </Text>
           <Heading
             color={useColorModeValue('gray.700', 'white')}
             fontSize={'xl'}
             fontFamily={'body'}
           >
-            Information Technology
+            {sub}
           </Heading>
           <Text color={'gray.500'} fontSize={'md'}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum.
+            {description}
           </Text>
         </Stack>
-        <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+        <Stack mt={4} direction={'row'} spacing={4} align={'center'} p={3}>
           <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-            <Text fontWeight={600}>Te Pukenga</Text>
-            <Text color={'gray.500'}>Feb 08, 2021 · Graduated</Text>
+            <Text fontWeight={600}>{institution}</Text>
+            <Text color={'gray.500'}>
+              {date} · {status}
+            </Text>
           </Stack>
         </Stack>
-      </Box>
-      <Box
-        maxW={'295px'}
-        w={'full'}
-        bg={useColorModeValue('white', 'gray.900')}
-        boxShadow={'2xl'}
-        rounded={'md'}
-        p={8}
-        overflow={'hidden'}
-      >
-        <Box
-          h={'165px'}
-          bg={'gray.100'}
-          mt={-6}
-          mx={-6}
-          mb={6}
-          pos={'relative'}
-        >
-          <img
-            src={
-              'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-            }
-            layout={'fill'}
-          />
-        </Box>
-        <Stack>
-          <Text
-            color={'green.500'}
-            textTransform={'uppercase'}
-            fontWeight={800}
-            fontSize={'xs'}
-            letterSpacing={1.1}
-          >
-            Bachelor
-          </Text>
-          <Heading
-            color={useColorModeValue('gray.700', 'white')}
-            fontSize={'xl'}
-            fontFamily={'body'}
-          >
-            Information Technology
-          </Heading>
-          <Text color={'gray.500'} fontSize={'md'}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum.
-          </Text>
-        </Stack>
-        <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
-          <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-            <Text fontWeight={600}>Te Pukenga</Text>
-            <Text color={'gray.500'}>Feb 08, 2021 · Graduated</Text>
-          </Stack>
-        </Stack>
-      </Box>
+      </Flex>
     </Center>
   );
 }
