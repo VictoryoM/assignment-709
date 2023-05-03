@@ -33,15 +33,12 @@ export const IdentityLeft = () => {
   return (
     <Flex direction={'column'}>
       {theValueLeft.map(item => (
-        <Box
-          key={item.name}
-          fontSize={{ base: 'xs', md: 'sm', sm: '2xs', lg: 'lg' }}
-        >
+        <Box key={item.name} fontSize={{ base: 'lg', md: 'xl' }}>
           {item.name === 'Website' ? (
             <Box>
               <Text fontWeight={'bold'}>{item.name}</Text> <Spacer />
               <Link to="https://victoryo.site">
-                <Code fontSize="xl" fontStyle={'italic'}>
+                <Code fontSize={{ base: 'lg', md: 'xl' }} fontStyle={'italic'}>
                   {item.value}
                 </Code>
               </Link>
@@ -80,15 +77,12 @@ export const IdentityRight = () => {
   return (
     <Flex direction={'column'}>
       {theValueRight.map(item => (
-        <Box
-          key={item.name}
-          fontSize={{ base: 'xs', md: 'sm', sm: '2xs', lg: 'lg' }}
-        >
+        <Box key={item.name} fontSize={{ base: 'lg', md: 'xl' }}>
           {item.name === 'Website' ? (
             <Box>
               <Text fontWeight={'bold'}>{item.name}</Text> <Spacer />
               <Link to="https://victoryo.site">
-                <Code fontSize="xl" fontStyle={'italic'}>
+                <Code fontSize={{ base: 'lg', md: 'xl' }} fontStyle={'italic'}>
                   {item.value}
                 </Code>
               </Link>

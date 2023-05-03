@@ -13,6 +13,7 @@ import {
   IconButton,
   Center,
   Textarea,
+  Divider,
 } from '@chakra-ui/react';
 import { SmallCloseIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
@@ -128,7 +129,8 @@ export default function Contact() {
             minH={100}
           />
         </FormControl>
-        <Stack spacing={6} direction={['column', 'row']}>
+        <Stack spacing={6} direction={'column'}>
+          <Divider border={'1px'} />
           <Button
             bg={'blue.400'}
             color={'white'}

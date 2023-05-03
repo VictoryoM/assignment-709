@@ -57,7 +57,7 @@ function TestimonialCard(props) {
       p={10}
       justifyContent={'space-between'}
       position={'relative'}
-      bg={useColorModeValue('whatsapp.100', 'purple.700')}
+      bg={useColorModeValue('whatsapp.100', 'purple.600')}
     >
       <Flex
         direction={'column'}

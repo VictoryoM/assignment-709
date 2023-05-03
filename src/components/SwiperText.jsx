@@ -5,8 +5,8 @@ import Typed from 'react-typed';
 const SwiperText = () => {
   const options = {
     strings: ['Designer', 'Developer', 'Freelancer', 'Hooper', 'Lover'],
-    typeSpeed: 70,
-    backSpeed: 50,
+    typeSpeed: 75,
+    backSpeed: 60,
     loop: true,
   };
 
