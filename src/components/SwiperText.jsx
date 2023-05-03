@@ -1,19 +1,29 @@
 import { Text, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
-import Typed from 'react-typed';
+import { TypeAnimation } from 'react-type-animation';
 
 const SwiperText = () => {
   const options = {
-    strings: ['Designer', 'Developer', 'Freelancer', 'Hooper', 'Lover'],
-    typeSpeed: 75,
-    backSpeed: 60,
-    loop: true,
+    sequence: [
+      ' Designer',
+      1000,
+      ' Developer',
+      1000,
+      ' Freelancer',
+      1000,
+      ' Hooper',
+      1000,
+      ' Lover',
+      1000,
+    ],
+    speed: 30,
   };
 
   return (
     <Text fontSize="2xl" color={'white'}>
-      I'm{' '}
-      <Typed
+      I'm
+      <TypeAnimation
+        repeat={Infinity}
         style={{ color: useColorModeValue('orange', 'blue') }}
         {...options}
       />

@@ -20,6 +20,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 import React from 'react';
+import { AchievementRight } from './components/Achievement';
+import { StatsLeft, StatsRight } from './components/Stats';
 
 export default function Skill() {
   return (
@@ -31,7 +33,7 @@ export default function Skill() {
       <Flex direction={'column'} gap={8} textAlign="center">
         <Heading marginTop={5}>Skills</Heading>
         <Divider border={'1px'} />
-        <Tabs position="relative" variant="unstyled">
+        <Tabs position="relative" variant="unstyled" align={'center'}>
           <TabList>
             <Tab>All</Tab>
             <Tab>Skill</Tab>
@@ -46,29 +48,57 @@ export default function Skill() {
           <TabPanels>
             <TabPanel>
               <Flex direction={'column'} gap={5} textAlign={'start'}>
-                <Text fontSize={'lg'}>Skills stats</Text>
-                <Box
-                  fontSize={'md'}
-                  fontFamily={'monospace'}
-                  fontStyle={'italic'}
+                <Text fontSize={'lg'} fontWeight={'bold'}>
+                  Skills stats
+                </Text>
+                <Flex
+                  direction={{ base: 'column', lg: 'row' }}
+                  gap={{ base: 0, md: 150, lg: 210 }}
                 >
-                  <Flex>
-                    <Box p="4">
-                      <Text>HTML</Text>
-                    </Box>
-                    <Spacer />
-                    <Box p="4">80 %</Box>
-                  </Flex>
-                  <Slider aria-label="slider-ex-1" defaultValue={80} isReadOnly>
-                    <SliderTrack>
-                      <SliderFilledTrack />
-                    </SliderTrack>
-                  </Slider>
-                </Box>
+                  <Box paddingRight={4} minW={{ base: 200, lg: 680 }}>
+                    <StatsLeft />
+                  </Box>
+                  <Box paddingRight={4} minW={{ base: 200, lg: 680 }}>
+                    <StatsRight />
+                  </Box>
+                </Flex>
+                <Text fontSize={'lg'} fontWeight={'bold'}>
+                  Achievement
+                </Text>
+                <Flex
+                  direction={{ base: 'column', lg: 'row' }}
+                  gap={{ base: 0, md: 150, lg: 210 }}
+                >
+                  <Box paddingRight={4} minW={{ base: 200, lg: 680 }}>
+                    <AchievementRight />
+                  </Box>
+                  <Box paddingRight={4} minW={{ base: 200, lg: 680 }}>
+                    <StatsRight />
+                  </Box>
+                </Flex>
               </Flex>
             </TabPanel>
             <TabPanel>
-              <p>two!</p>
+              <Flex direction={'column'} gap={5} textAlign={'start'}>
+                <Text fontSize={'lg'} fontWeight={'bold'}>
+                  Skills stats
+                </Text>
+                <Text fontStyle={'italic'} fontSize={'md'}>
+                  Stats below is based on data I've gathered from people around
+                  me. Don't hesitate to ask me for more information.
+                </Text>
+                <Flex
+                  direction={{ base: 'column', lg: 'row' }}
+                  gap={{ base: 0, md: 150, lg: 210 }}
+                >
+                  <Box paddingRight={4} minW={680}>
+                    <StatsLeft />
+                  </Box>
+                  <Box paddingRight={4} minW={680}>
+                    <StatsRight />
+                  </Box>
+                </Flex>
+              </Flex>
             </TabPanel>
             <TabPanel>
               <p>three!</p>
