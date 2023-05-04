@@ -7,15 +7,11 @@ import {
   Input,
   Stack,
   useColorModeValue,
-  HStack,
   Avatar,
-  AvatarBadge,
-  IconButton,
   Center,
   Textarea,
   Divider,
 } from '@chakra-ui/react';
-import { SmallCloseIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
 import Socials from './components/SocialButton';
 import theImage from './components/hero-bg.jpg';

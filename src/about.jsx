@@ -1,19 +1,12 @@
 import {
   Box,
-  Center,
   Code,
   Divider,
   Flex,
-  Grid,
-  GridItem,
-  HStack,
   Heading,
   Skeleton,
   Text,
-  Tooltip,
-  VStack,
   useColorModeValue,
-  Spacer,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { IdentityLeft, IdentityRight } from './components/Identity';

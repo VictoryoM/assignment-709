@@ -1,13 +1,4 @@
-import {
-  Box,
-  Code,
-  Flex,
-  Grid,
-  GridItem,
-  Spacer,
-  Text,
-  Tooltip,
-} from '@chakra-ui/react';
+import { Box, Code, Flex, Spacer, Text } from '@chakra-ui/react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 

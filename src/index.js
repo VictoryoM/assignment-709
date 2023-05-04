@@ -9,7 +9,6 @@ import Skill from './skill';
 import Reference from './reference';
 import Project from './project';
 import Navbar from './components/Navbar';
-import Testing from './testing';
 
 const router = createBrowserRouter([
   {
@@ -40,10 +39,6 @@ const router = createBrowserRouter([
         path: 'project',
         element: <Project />,
         // loader: teamLoader,
-      },
-      {
-        path: 'testing',
-        element: <Testing />,
       },
     ],
   },
