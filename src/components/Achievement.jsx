@@ -7,7 +7,7 @@ import {
   Flex,
   Skeleton,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export function Achievement(props) {
   const { title, sub, description, image, institution, date, status } = props;
@@ -37,6 +37,7 @@ export function Achievement(props) {
             src={image}
             onLoad={() => setLoading(false)}
             // layout={'fill'}
+            alt={'Achievement'}
           />
         </Skeleton>
         {/* </Box> */}

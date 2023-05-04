@@ -31,7 +31,6 @@ const LinkItems = [
   { name: 'Reference', icon: FiStar },
   { name: 'Skill', icon: FiSettings },
   { name: 'Contact', icon: FiPhone },
-  { name: 'Testing', icon: FiPhone },
 ];
 
 export default function Navbar({ children }) {
