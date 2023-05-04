@@ -9,6 +9,7 @@ import {
   StatLabel,
   StatNumber,
   useColorModeValue,
+  Button,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { BsPerson } from 'react-icons/bs';
@@ -17,6 +18,8 @@ import { GoLocation } from 'react-icons/go';
 import React from 'react';
 import { Achievement } from './components/Achievement';
 import { Achieves } from './components/achieves';
+import theImage from './components/project.png';
+import { Link } from 'react-router-dom';
 
 function StatsCard(props) {
   const { title, stat, icon } = props;
@@ -67,35 +70,47 @@ export default function Project() {
             py={10}
             fontWeight={'bold'}
           >
-            Our company is expanding, you could be too.
+            Gained knowledge from the project, more in the future.
           </chakra.h1>
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
             <StatsCard
-              title={'Users'}
-              stat={'5,000'}
+              title={'Projects'}
+              stat={'5'}
               icon={<BsPerson size={'3em'} />}
             />
             <StatsCard
-              title={'Servers'}
-              stat={'1,000'}
+              title={'Languages'}
+              stat={'6'}
               icon={<FiServer size={'3em'} />}
             />
             <StatsCard
-              title={'Datacenters'}
-              stat={'7'}
+              title={'Frameworks'}
+              stat={'5'}
               icon={<GoLocation size={'3em'} />}
             />
           </SimpleGrid>
         </Box>
         <Box textAlign={'start'}>
           <Achievement
-            title={Achieves[0].title}
-            sub={Achieves[0].sub}
+            title={'React'}
+            sub={'Portfolio'}
             description={Achieves[0].description}
-            image={Achieves[0].image}
-            institution={Achieves[0].institution}
-            date={Achieves[0].date}
-            status={Achieves[0].status}
+            image={theImage}
+            institution={
+              <Link to={'/'}>
+                <Button
+                  size={'sm'}
+                  mb={4}
+                  variant={'solid'}
+                  // border={'1px'}
+                  color={'green.500'}
+                >
+                  Click here
+                </Button>
+              </Link>
+            }
+            date={'April 2023'}
+            status={'Finished'}
           />
         </Box>
       </Flex>
